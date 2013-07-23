@@ -1,0 +1,8 @@
+html,body,div,span,p,ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,em { padding: 0; margin: 0; }
+
+body { background: #efefef; font-size: 85.55%; font-family: "Helvetica Neue","Trebuchet MS",Arial,Sans-Serif; }
+
+#wrapper { width: 1014px; margin: 0 auto; text-align: center; }
+#wrapper input { margin: 30px 0; padding: 5px; width: 400px; font-size: 1.3em; border-radius: 4px 4px; border: 1px solid #c0c0c0; box-shadow: 1px 1px 1px #afafaf; }
+#wrapper #linkSubmit { margin: 10px 10px 10px 0; width: 75px; font-size: 1em; }
+h1 { font-size: 1.5em; margin-top: 20px; }

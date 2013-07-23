@@ -1,0 +1,5 @@
+<?php
+
+echo "Nice try.";
+
+?>
