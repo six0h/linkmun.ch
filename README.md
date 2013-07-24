@@ -75,3 +75,13 @@ Currently, the framework contains only one model, which is contained in the Mode
 SURPRISE, this baby is packing zeromq, with a whack of workers to whip up some wizardry. Our current demo client POSTs to our API Endpoints, which then relays through ZeroMQ Router,Dealer,Replier, and last (but not least!) Requestor.
 
 Thanks to ZMQ, our messaging happens at breakneck speeds. The client could be optimized to react faster on higher performing hosts, but is currently throttled as far as responses go, to make sure data is properly committed before updating the client display.
+
+####Broker
+The workers rely on a broker to relay messages from the client. To run the broker, from the terminal, in the main directory, do:
+
+    ./zmqBroker.php &
+
+####Workers
+How many workers do you wants? How many do you needs? Same deal as the broker, except you can fire up as many as you want with:
+
+    ./zmqWorker.php &

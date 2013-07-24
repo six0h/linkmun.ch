@@ -1,3 +1,5 @@
+#!/usr/bin/env php
+
 <?php
 /*
 * Simple request-reply broker

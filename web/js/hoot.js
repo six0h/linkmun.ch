@@ -49,7 +49,8 @@
             WebService.rpc('ah',lastUpdated,function(res) {
                 $('#list').html('');
                 res.forEach (function(item) { 
-                    $('#list').append('<li>http://' + baseUrl + 'y/' + item.shortUrl + ' - ' + item.longUrl + '</li>'); 
+                    var shortlink = 'http://' + baseUrl + 'y/' + item.shortUrl;
+                    $('#list').append('<li><a href="' + shortlink + '">' + shortlink + '</a> - ' + item.longUrl + '</li>'); 
                 });
             });
             return false;

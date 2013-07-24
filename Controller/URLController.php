@@ -66,11 +66,18 @@ class URLController {
             $response = $requester->recv();
             return $response;
         } else {
-            $result = array(
-                'code' => 503,
-                'message' => 'This URL only allows POSTs'
-            );
-            return json_encode($result);
+            $context = new ZMQContext();
+            //  Socket to talk to server
+            $requester = new ZMQSocket($context, ZMQ::SOCKET_REQ);
+            $requester->connect("tcp://127.0.0.1:5559");
+            $req = array(
+                'work' => 'return',
+                'url' => $params);
+            $requester->send(json_encode($req));
+            $response = $requester->recv();
+            $response = json_decode($response,true);
+            header("Location: http://".$response['url']);
+            return true;
         }
 
     }
