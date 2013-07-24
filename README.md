@@ -79,9 +79,9 @@ Thanks to ZMQ, our messaging happens at breakneck speeds. The client could be op
 ####Broker
 The workers rely on a broker to relay messages from the client. To run the broker, from the terminal, in the main directory, do:
 
-    ./zmqBroker.php &
+    php zmqBroker.php
 
 ####Workers
 How many workers do you wants? How many do you needs? Same deal as the broker, except you can fire up as many as you want with:
 
-    ./zmqWorker.php &
+    php zmqWorker.php

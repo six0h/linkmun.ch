@@ -57,8 +57,10 @@
         }
     }
 
-    LinkTableModel.updateList(lastUpdated)
-    lastUpdated = new String(new Date().getTime() /1000);
+    var linkUpdater = setInterval(function() { 
+        LinkTableModel.updateList(lastUpdated);
+        lastUpdated = new String(new Date().getTime() /1000);
+    }, 10000);
 
     // Controller for shortening/expanding links
     var URLController = {
@@ -93,5 +95,8 @@
             URLController.convertUrl(content);
         }
     });
+    
+    LinkTableModel.updateList(lastUpdated);
+    lastUpdated = new String(new Date().getTime() /1000);
 
 })(window);
