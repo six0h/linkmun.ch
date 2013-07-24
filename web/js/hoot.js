@@ -48,7 +48,7 @@
         "updateList": function() {
             WebService.rpc('ah',lastUpdated,function(res) {
                 $('#list').html('');
-                res.forEach (function(item) { 
+                res.reverse().forEach (function(item) { 
                     var shortlink = 'http://' + baseUrl + 'y/' + item.shortUrl;
                     $('#list').append('<li><a href="' + shortlink + '">' + shortlink + '</a> - ' + item.longUrl + '</li>'); 
                 });
