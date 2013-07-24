@@ -2,7 +2,7 @@
 ---
 
 ###Foreword
-I just registered linkmun.ch and it may not be working properly for you yet. If you are on linux, edit your /etc/hosts, or on windows, your C:\windows\system32\drivers\etc\hosts file and add the following:
+I just registered linkmun.ch and it may not be working properly for you yet. If you are on linux, edit your /etc/hosts, or on windows, your C:\windows\system32\drivers\etc\hosts file and add the following in a text editor of your choosing:
     
     74.208.173.8 linkmun.ch
 
