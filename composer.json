@@ -1,6 +1,6 @@
 {
     "name": "soq/linkmunch",
-    "type": "framework",
+    "type": "library",
     "description": "A URL Shortener",
     "keywords": ["url","URL","framework"],
     "homepage": "https://github.com/six0h/linkmun.ch",
