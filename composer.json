@@ -2,6 +2,7 @@
     "name": "soq/linkmunch",
     "type": "framework",
     "description": "A URL Shortener",
+    "keywords": ["url","URL","framework"],
     "homepage": "https://github.com/six0h/linkmun.ch",
     "license": "MIT",
     "authors": [
