@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Model\\' => array($baseDir . '/'),
     'Library\\' => array($baseDir . '/'),
     'Controller\\' => array($baseDir . '/'),
