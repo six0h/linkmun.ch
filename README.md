@@ -45,3 +45,20 @@ How to add Routes is clearly defined in the index file itself, and follows the o
 A simple *match* method is used after to match up the actual client URI with your routes:
 
     $router->match($_SERVER['REQUEST_URI']);
+
+####The Controller
+This whole shebang is controlled through one class, the Controller/URLController.php file contains this class, and all methods should be mapped to from the Routing system. If you dont want a method mapped for now, then dont add it to the routing system.
+
+Taking a look through the demo code in this file should be fairly clear, once you have seen the routes that are defined in the routing system. Make sure you look at the routing system before you look at the controllers, so you know what youre looking at as far as methods go.
+
+####Templating
+A class has been created to abstract away the Twig API. You may call the Template class from Library/Template.php, which provides a render method in the form of:
+
+    $tpl = new Template();
+    $tpl->render('index.html.twig', array('paramtopass'=>'valtopass','anotherparam'=>'anotherval'));
+
+####Models
+Currently, the framework contains only one model, which is contained in the Model/URLModel.php file. Care to take 3 guesses at what happens here? THE MAGIC BABY! Business Logic happens here.
+
+###Transport
+SURPRISE, this baby is packing zeromq, with a whack of workers to whip up some wizardry. Our current demo client POSTs to our API Endpoints, which then relays through ZeroMQ Router,Dealer,Replier, and last (but not least!) Requestor.
