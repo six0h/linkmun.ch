@@ -61,4 +61,7 @@ A class has been created to abstract away the Twig API. You may call the Templat
 Currently, the framework contains only one model, which is contained in the Model/URLModel.php file. Care to take 3 guesses at what happens here? THE MAGIC BABY! Business Logic happens here.
 
 ###Transport
+---
 SURPRISE, this baby is packing zeromq, with a whack of workers to whip up some wizardry. Our current demo client POSTs to our API Endpoints, which then relays through ZeroMQ Router,Dealer,Replier, and last (but not least!) Requestor.
+
+Thanks to ZMQ, our messaging happens at breakneck speeds. The client could be optimized to react faster on higher performing hosts, but is currently throttled as far as responses go, to make sure data is properly committed before updating the client display.
