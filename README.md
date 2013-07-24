@@ -3,6 +3,8 @@
 
 ## Framework for HootSuite Technical Test
 
+#▇ ▅ █ ▅ ▇ ▂ ▃ ▁ ▁ ▅ ▃ ▅ ▅ ▄ ▅ ▇
+
 ###Introduction
 ---
 This framework was built at the behest of a technical test supplied by Hootsuite, those crazy social media people. There is an API available with 3 endpoints. There is also a client demo at http://www.linkmun.ch.
