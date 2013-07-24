@@ -15,7 +15,7 @@ class Database {
     protected $username;
     protected $password;
     protected $hostname;
-    protected $charset = "UTF-8";
+    protected $charset = "utf8";
 
     public function __construct($user,$pass,$host,$db) {
         $this->username = $user;
@@ -40,11 +40,18 @@ class Database {
         }
 
         $query = $sql . " VALUES(" . implode(',',$args) . ");";
-        return $query->rowCount();
+        $ex = $this->db->prepare($query);
+        $ex->execute($values);
+        return $ex->rowCount();
     }
 
     public function update($sql,$values) {
         throw new Exception('This has not been implemented', 500);
     }
+
+    public function getLastInsertId() {
+        return $this->db->lastInsertId();
+    }
+
 
 }

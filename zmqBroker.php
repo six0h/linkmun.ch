@@ -5,11 +5,14 @@
 */
 
 //  Prepare our context and sockets
+error_log("Starting Broker");
 $context = new ZMQContext();
 $frontend = new ZMQSocket($context, ZMQ::SOCKET_ROUTER);
 $backend = new ZMQSocket($context, ZMQ::SOCKET_DEALER);
-$frontend->bind("tcp://*:5559");
-$backend->bind("tcp://*:5560");
+$frontend->bind("tcp://127.0.0.1:5559");
+error_log("Frontend Ready");
+$backend->bind("tcp://127.0.0.1:5560");
+error_log("Backend Ready");
 
 //  Initialize poll set
 $poll = new ZMQPoll();
@@ -26,6 +29,7 @@ while (true) {
             //  Process all parts of the message
             while (true) {
                 $message = $socket->recv();
+                error_log("Data");
                 //  Multipart detection
                 $more = $socket->getSockOpt(ZMQ::SOCKOPT_RCVMORE);
                 $backend->send($message, $more ? ZMQ::MODE_SNDMORE : null);
@@ -35,6 +39,7 @@ while (true) {
             }
         } elseif ($socket === $backend) {
             $message = $socket->recv();
+            error_log("Data Back");
             //  Multipart detection
             $more = $socket->getSockOpt(ZMQ::SOCKOPT_RCVMORE);
             $frontend->send($message, $more ? ZMQ::MODE_SNDMORE : null);

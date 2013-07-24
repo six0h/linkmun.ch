@@ -59,7 +59,7 @@ class URLModel {
             $this->date_created = $result['date_created'];
         }
 
-        return $this->asArray();
+        return $this->long_url;
     }
 
     /**
@@ -107,6 +107,7 @@ class URLModel {
     }
 
     public function commit() {
+        $db = $this->db;
         if(is_int($this->id)) {
             // Already Stored, Don't Store A Duplicate
         } else {
@@ -135,6 +136,12 @@ class URLModel {
             'shortUrl' => $this->short_url,
             'longUrl' => $this->full_url,
             'dateCreated' => $this->date_created);
+    }
+
+    public function getAll() {
+        $query = "SELECT * FROM urls";
+        $values = array();
+        return $this->db->query($query);
     }
 
 }

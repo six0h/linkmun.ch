@@ -37,6 +37,7 @@ class Router {
         $PATH = $URI[0];
         $path = split('/', Helper::removeLeadingSlash($PATH));
         $params = $this->_getParamsFromPath($path);
+        foreach($_REQUEST as $req) $params[] = $req;
 
         if($path[0] == '') {
             $path = '/';
