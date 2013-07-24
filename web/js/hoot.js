@@ -68,15 +68,15 @@
                 var mydata = { "url": url }
                 WebService.rpc('er',mydata,function(res) {
                     map.updateList(res);
+                    $('#url').val('http://' + baseUrl + 'y/' + res.url);
                 });
             } else {
-                console.log(url + ' url here');
                 url = url.replace(/linkmun\.ch/,'').replace(/http\:\/\//,'').replace(/https\:\/\//,'').replace(/\/y\//,'');
                 var mydata = { "url": url }
-                console.log(mydata);
                 WebService.rpc('y',mydata,function(res) {
+                    console.log(res);
                     if(res.code == 200) {
-                        $('#url').val(res.message);
+                        $('#url').val(res.url);
                     } else {
                         ErrDisplay.Err(String(res.code) + ' - ' + res.message); 
                     }

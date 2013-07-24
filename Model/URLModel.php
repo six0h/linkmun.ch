@@ -47,14 +47,14 @@ class URLModel {
     public function findByShort($id) {
         $db = $this->db;
         try {
-            $results = $db->query("SELECT * FROM urls WHERE short_url = ?",array($id));
+            $results = $db->query("SELECT * FROM urls WHERE shortUrl = ?",array($id));
         } catch (Exception $e) {
             throw new Exception('There was a problem with the database, try again.');
         }
 
         foreach($results as $result) {
-            $this->short_url    = $result['short_url'];
-            $this->long_url     = $result['long_url'];
+            $this->short_url    = $result['shortUrl'];
+            $this->long_url     = $result['longUrl'];
             $this->id           = $result['id'];
             $this->date_created = $result['date_created'];
         }

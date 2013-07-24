@@ -33,9 +33,9 @@ class Router {
      * Launches a controller method based on URI
      */
     public function match($URI) {
-        $URI = split('/\?/',$URI);
+        $URI = preg_split('/\?/',$URI);
         $PATH = $URI[0];
-        $path = split('/', Helper::removeLeadingSlash($PATH));
+        $path = preg_split('/\//', Helper::removeLeadingSlash($PATH));
         $params = $this->_getParamsFromPath($path);
         foreach($_REQUEST as $req) $params[] = $req;
 

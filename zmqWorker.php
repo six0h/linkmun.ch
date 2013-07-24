@@ -1,3 +1,5 @@
+#!/usr/bin/env php
+
 <?php
 
 #######
@@ -32,7 +34,6 @@ while(true) {
     if($request) {
 
         // Make sure we're dealing with JSON
-        error_log("Received Request: " . $request);
         try {
             $request = json_decode($request,true);
         } catch (Exception $e) {
@@ -46,9 +47,10 @@ while(true) {
             $url = $URLModel->generateShortURL($request['url'][0]);
             error_log('Generated ' . $url);
         } elseif ($request['work'] == 'return') {
-            $url = $URLModel->findByShort($request['url']);
-            error_log('Reversed ' .$url[0]);
+            $url = $URLModel->findByShort($request['url'][0]);
+            error_log('Reversed ' .$url);
         }
+
         $response = array('code'=>200,'url'=>$url);
         $responder->send(json_encode($response));
         error_log("Sent Response: " . json_encode($response));
