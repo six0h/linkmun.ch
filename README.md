@@ -3,7 +3,7 @@
 
 ## Framework for HootSuite Technical Test
 
-#▇ ▅ █ ▅ ▇ ▂ ▃ ▁ ▁ ▅ ▃ ▅ ▅ ▄ ▅ ▇
+#▇ ▅ █ ▅ ▇ ▂ ▃ ▁ ▁ 
 
 ###Introduction
 ---
