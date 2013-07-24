@@ -32,13 +32,13 @@ class URLModel {
         }
 
         foreach($results as $result) {
-            $this->short_url    = $result['short_url'];
-            $this->long_url     = $result['long_url'];
+            $this->short_url    = $result['shortUrl'];
+            $this->long_url     = $result['longUrl'];
             $this->id           = $result['id'];
             $this->date_created = $result['date_created'];
         }
 
-        return $this->asArray();
+        return $this->short_url();
     }
 
     /**

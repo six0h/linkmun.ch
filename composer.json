@@ -1,4 +1,9 @@
 {
+    "name": "soq/linkmunch",
+    "type": "framework",
+    "description": "A URL Shortener",
+    "homepage": "https://github.com/six0h/linkmun.ch",
+    "license": "MIT",
     "require": {
         "twig/twig": "1.*",
         "phpunit/phpunit": "3.7.*"
