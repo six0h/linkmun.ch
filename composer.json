@@ -4,6 +4,14 @@
     "description": "A URL Shortener",
     "homepage": "https://github.com/six0h/linkmun.ch",
     "license": "MIT",
+    "authors": [
+        {
+            "name":"Cody Halovich",
+            "email":"cody@telenova.ca",
+            "homepage":"http://linkmun.ch",
+            "role":"Developer"
+        }
+    ],
     "require": {
         "twig/twig": "1.*",
         "phpunit/phpunit": "3.7.*"
